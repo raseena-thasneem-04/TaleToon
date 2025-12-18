@@ -14,3 +14,5 @@ storytelling rather than purely descriptive content. The ultimate objec
 tive of the project is to utilize these narratives to generate comic strips
 with corresponding visual representations, resulting in a complete visual
 storytelling framework
+
+Also, this project is still under development. A detailed instruction on how to implement the project will be attached in the later phases of development.
