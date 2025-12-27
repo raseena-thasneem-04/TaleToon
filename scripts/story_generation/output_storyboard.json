@@ -1,0 +1,125 @@
+{
+  "festival_name": "Pongal",
+  "panel_count": 7,
+  "panels": [
+    {
+      "panel_id": 1,
+      "role": "Introduction",
+      "conversation": "In a small village in Tamil Nadu, the sun was shining bright.",
+      "background": "A sunny landscape with a few palm trees and a farmer working in the field.",
+      "time_of_day": "morning",
+      "characters": [
+        "farmer",
+        "villager"
+      ],
+      "action": "working",
+      "objects": [
+        "plow",
+        "field"
+      ],
+      "cultural_symbol": "traditional festival symbol"
+    },
+    {
+      "panel_id": 2,
+      "role": "Seasonal Context",
+      "conversation": "The villagers knew that Pongal was just around the corner.",
+      "background": "A calendar with the dates marked for Pongal.",
+      "time_of_day": "morning",
+      "characters": [
+        "villager",
+        "farmer"
+      ],
+      "action": "preparing",
+      "objects": [
+        "food",
+        "decorations"
+      ],
+      "cultural_symbol": "traditional festival symbol"
+    },
+    {
+      "panel_id": 3,
+      "role": "Mythology",
+      "conversation": "'The Sun God is returning,' said the farmer, 'we must make him happy with our harvest'.",
+      "background": "A mythological scene of the Sun God coming back to Earth.",
+      "time_of_day": "morning",
+      "characters": [
+        "farmer",
+        "Sun God"
+      ],
+      "action": "offering",
+      "objects": [
+        "rice",
+        "flowers"
+      ],
+      "cultural_symbol": "traditional festival symbol"
+    },
+    {
+      "panel_id": 4,
+      "role": "Ritual",
+      "conversation": "'Offer the Sun God our gratitude with these rice offerings'.",
+      "background": "A ritual scene of villagers offering food to the Sun God.",
+      "time_of_day": "morning",
+      "characters": [
+        "villager",
+        "priest"
+      ],
+      "action": "offering",
+      "objects": [
+        "rice",
+        "flutes"
+      ],
+      "cultural_symbol": "traditional festival symbol"
+    },
+    {
+      "panel_id": 5,
+      "role": "Celebration",
+      "conversation": "'Let us celebrate Pongal with music and dance!' exclaimed the villager.",
+      "background": "A scene of villagers dancing and playing musical instruments.",
+      "time_of_day": "afternoon",
+      "characters": [
+        "villager",
+        "dancer"
+      ],
+      "action": "dancing",
+      "objects": [
+        "drums",
+        "flutes"
+      ],
+      "cultural_symbol": "traditional festival symbol"
+    },
+    {
+      "panel_id": 6,
+      "role": "Community",
+      "conversation": "'We are one community, united in our gratitude for the harvest'.",
+      "background": "A scene of villagers from different walks of life coming together.",
+      "time_of_day": "evening",
+      "characters": [
+        "villager",
+        "elder"
+      ],
+      "action": "gathering",
+      "objects": [
+        "food",
+        "drinks"
+      ],
+      "cultural_symbol": "traditional festival symbol"
+    },
+    {
+      "panel_id": 7,
+      "role": "Festivity",
+      "conversation": "'Pongal is a time for joy and celebration, let us keep the spirit of gratitude alive'.",
+      "background": "A vibrant scene of villagers enjoying the festival with decorations and lights.",
+      "time_of_day": "evening",
+      "characters": [
+        "villager",
+        "musician"
+      ],
+      "action": "playing",
+      "objects": [
+        "drums",
+        "decorations"
+      ],
+      "cultural_symbol": "traditional festival symbol"
+    }
+  ]
+}
