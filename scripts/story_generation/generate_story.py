@@ -32,19 +32,30 @@ def repair_panel(panel):
     return panel
 
 
-def generate_story(festival_name, short_narrative):
+def generate_story(festival_name: str, short_narrative: str) -> str:
+    """
+    Generates a conversational storyboard JSON for a given festival.
+
+    Inputs:
+        festival_name (str): Festival identified from retrieval phase
+        short_narrative (str): Narrative generated from narrative module
+
+    Output:
+        str: Clean, validated JSON string
+    """
+
     # 1. Read prompt template
     with open("prompt_template.txt", "r", encoding="utf-8") as f:
         prompt_template = f.read()
 
-    # 2. Safe variable substitution (NO {} conflicts)
+    # 2. Safe variable substitution (avoids {} conflicts)
     template = Template(prompt_template)
     prompt = template.substitute(
         festival_name=festival_name,
         short_narrative=short_narrative
     )
 
-    # 3. Run Ollama (PATH-based, Windows-safe)
+    # 3. Run Ollama (platform-safe)
     result = subprocess.run(
         ["ollama", "run", MODEL_NAME],
         input=prompt,
@@ -54,36 +65,30 @@ def generate_story(festival_name, short_narrative):
         errors="ignore"
     )
 
-    raw_output = result.stdout.strip() or result.stderr.strip()
+    raw_output = (result.stdout or result.stderr).strip()
 
-    # 4. Extract JSON block only
+    # 4. Extract JSON block
     match = re.search(r"\{[\s\S]*\}", raw_output)
     if not match:
-        raise ValueError("LLM did not return valid JSON")
+        raise ValueError("LLM did not return a valid JSON block")
 
     json_text = match.group(0)
 
     # 5. Parse JSON
-    data = json.loads(json_text)
+    try:
+       data = json.loads(json_text)
+    except json.JSONDecodeError:
+    # Attempt minimal repair
+       cleaned = json_text.replace("\n", " ")
+       cleaned = re.sub(r",\s*}", "}", cleaned)
+       cleaned = re.sub(r",\s*]", "]", cleaned)
 
-    # 6. Deterministic repair pass (IMPORTANT)
+       data = json.loads(cleaned)
+  
+
+    # 6. Deterministic repair pass
     for panel in data.get("panels", []):
         repair_panel(panel)
 
-    # 7. Return clean, formatted JSON
+    # 7. Return formatted JSON (DO NOT WRITE FILE HERE)
     return json.dumps(data, ensure_ascii=False, indent=2)
-
-
-if __name__ == "__main__":
-    festival_name = "Pongal"
-    short_narrative = (
-        "Pongal is a harvest festival celebrated in Tamil Nadu "
-        "to thank nature, farmers, and the Sun God for abundance."
-    )
-
-    output = generate_story(festival_name, short_narrative)
-
-    with open("output_storyboard.json", "w", encoding="utf-8") as f:
-        f.write(output)
-
-    print("Story generation completed.")

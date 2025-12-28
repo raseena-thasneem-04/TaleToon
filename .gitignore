@@ -1,1 +1,19 @@
 tale_env/
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+tale_env/
+
+# Generated ML artifacts
+festival_dataset/tfidf_matrix.npz
+festival_dataset/tfidf_vectorizer.pkl
+
+# OS
+.DS_Store
+
+# Generated outputs
+output_storyboard.json
+outputs/
+
