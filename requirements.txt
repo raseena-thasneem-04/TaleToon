@@ -1,0 +1,13 @@
+numpy
+pandas
+scikit-learn
+nltk
+transformers
+torch
+sentencepiece
+tqdm
+matplotlib
+opencv-python
+Pillow
+diffusers
+accelerate
